@@ -1,5 +1,7 @@
-package com.example.ratelimiter.annotation;
-import java.lang.annotation.*;
-@Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface RateLimited { int capacity() default 5; }
+@Retention(RetentionPolicy.RUNTIME)
+public @interface RateLimited {
+    int capacity() default 10;        // tokens
+    int refillTokens() default 10;
+    int refillSeconds() default 60;   // refill window
+}
