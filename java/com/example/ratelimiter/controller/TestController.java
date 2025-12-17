@@ -6,6 +6,6 @@ public class TestController {
     @GetMapping("/hello")
     @RateLimited(capacity = 5, refillTokens = 5, refillSeconds = 60)
     public String hello() {
-        return "Hello World";
+        return "Hello Rate Limier";
     }
 }
